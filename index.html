@@ -1,10 +1,267 @@
 <!DOCTYPE HTML>
+<!--
+  Based on
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html>
 	<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117339330-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-117339330-4');
+    </script>
+
     <title>
-      Network Fusion
+      Network Fusion for Content Creation with Conditional INNs
     </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-	<body>
+	<body class="landing">
+
+		<!-- Banner -->
+			<section id="banner">
+        <h2>
+          Network Fusion for Content Creation <br/>with Conditional INNs
+        </h2>
+        <p>
+        <a href="https://github.com/rromb">Robin Rombach</a>&ast;,
+        <a href="https://github.com/pesser">Patrick Esser</a>&ast;, 
+        <a href="https://hci.iwr.uni-heidelberg.de/Staff/bommer">Bj&ouml;rn Ommer</a><br/>
+        <a href="https://www.iwr.uni-heidelberg.de/">IWR, Heidelberg University</a><br/>
+        <a href="http://visual.cs.brown.edu/aicc2020/">AI for Content Creation
+          Workshop</a> at <a href="http://cvpr2020.thecvf.com/">CVPR 2020</a></p>
+			</section>
+
+			<!-- One -->
+				<section id="one" class="wrapper style1">
+					<div class="container 75%">
+						<div class="row 200%">
+							<div class="6u 12u$(medium) vert-center" style="margin:1% 0">
+                  <div class="container 25%">
+
+                    <div class="image fit captioned align-left"
+                                style="margin-bottom:2em; box-shadow:0 0;
+                                text-align:justify">
+                      <img src="images/teaser.png" alt="" style="border:0px solid black"/>
+                      We learn a conditional invertible neural network (cINN) to
+                      translate between representations of different domain
+                      experts. This results in a fused model, which can be
+                      controlled through the first expert to create novel and
+                      diverse content in the domain of the second expert.
+                    </div>
+
+                    <div class="image fit captioned align-center"
+                                style="margin-bottom:0em; box-shadow:0 0">
+                      <a href="images/netfusion.pdf">
+                        <img src="images/paper.jpg" alt="" style="border:1px solid black"/>
+                      </a>
+                      <a href="https://arxiv.org/">arXiv</a>
+                      <div class="headerDivider"></div>
+                      <a href="images/netfusion.bib">BibTeX</a>
+                      <br/>
+                      &ast; equal contribution
+                    </div>
+
+                  </div>
+							</div>
+							<div class="6u$ 12u$(medium)">
+                <h1>Abstract</h1>
+                <p style="text-align: justify">
+Artificial Intelligence for Content Creation has the potential to reduce the
+amount of manual content creation work significantly. While automation of
+laborious work is welcome, it is only useful if it allows users to control
+aspects of the creative process when desired. Furthermore, widespread adoption
+of semi-automatic content creation depends on low barriers regarding the
+expertise, computational budget and time required to obtain results and
+experiment with new techniques.  With state-of-the-art approaches relying on
+task-specific models, multi-GPU setups and weeks of training time, we must find
+ways to reuse and recombine them to meet these requirements. Instead of
+designing and training methods for controllable content creation from scratch,
+we thus present a method to repurpose powerful, existing models for new tasks,
+even though they have never been designed for them.  We formulate this problem
+as a translation between expert models, which includes common content creation
+scenarios, such as text-to-image and image-to-image translation, as a special
+case. As this translation is ambiguous, we learn a generative model of hidden
+representations of one expert conditioned on hidden representations of the
+other expert. Working on the level of hidden representations makes optimal use
+of the computational effort that went into the training of the expert model to
+produce these efficient, low-dimensional representations. Experiments
+demonstrate that our approach can translate from BERT, a state-of-the-art
+expert for text, to BigGAN, a state-of-the-art expert for images, to enable
+text-to-image generation, which neither of the experts can perform on its own.
+Additional experiments show the wide applicability of our approach across
+different conditional image synthesis tasks and improvements over existing
+methods for image modifications.
+                </p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Two -->
+				<section id="two" class="wrapper style2 special">
+					<div class="container">
+						<header class="major">
+							<h2>Results</h2>
+							<p>and applications of our model.</p>
+						</header>
+
+            <div class="row 150%">
+<div class="6u 12u$(xsmall)">
+								<div class="image fit captioned align-just">
+                  <div class="videocontainer">
+                  <video controls class="videothing">
+                   <source src="images/32-oral.mp4" type="video/mp4">
+                   Your browser does not support the video tag.
+                  </video>
+                  </div>
+                  <h3>Overview</h3>
+                  Our oral presentation for the
+                  <a href="http://visual.cs.brown.edu/aicc2020/">AI for Content Creation
+                  Workshop</a>.
+								</div>
+</div>
+<div class="6u$ 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/stylizedvsvanilla.jpg">
+									<img src="images/stylizedvsvanilla.jpg" alt="" />
+                  </a>
+                  <h3>Sketch-to-Image Transfer</h3>
+When trained on a <a href="https://github.com/rgeirhos/Stylized-ImageNet">stylized version of
+ImageNet</a> to remove its texture bias, a ResNet-50 classifier can be fused
+with a <a href="https://github.com/ajbrock/BigGAN-PyTorch">BigGAN generator</a>
+to produce coherent sketch-to-image synthesis results (left), whereas a vanilla
+ResNet-50 fails to produce meaningful representations for sketches (right).
+								</div>
+</div>
+</div>
+<div class="row 150%">
+<div class="6u 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/imgmod.jpg">
+									<img src="images/imgmod.jpg" alt="" />
+                  </a>
+									<h3>Face Attribute Modification</h3>
+                  Compared to
+                  <a href="https://github.com/yunjey/StarGAN">StarGAN</a>, our approach produces
+                  more coherent changes, e.g. changes in gender cause changes in hair length and
+                  changes in the beard attribute have no effect on female faces. This demon-
+                  strates the advantage of fusing attribute information on a low-dimensional
+                  representation of a generic autoencoder.
+								</div>
+</div>
+<div class="6u$ 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/txt2img.jpg">
+									<img src="images/txt2img_small.jpg" alt="" />
+                  </a>
+									<h3>Text-to-Image</h3>
+                  Fusing text representations of BERT with a BigGAN image
+                  generator enables text-to-image generation. Results show a high diversity of
+                  samples, the ability for fine-grained control of the generation process, e.g.
+                  color in the first two rows, and a large diversity in the objects that can be
+                  synthesized, e.g. school buses and broccoli plants.
+								</div>
+</div>
+</div>
+<div class="row 150%">
+<div class="6u 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/stylizedtoimg.jpg">
+									<img src="images/stylizedtoimg.jpg" alt="" />
+                  </a>
+									<h3>Edge-to-Image</h3>
+                  Edge-to-Image Synthesis requires a good representation of
+                  edges, which can be obtained from a Stylized ResNet-50.
+								</div>
+</div>
+<div class="6u$ 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/vanillatoimg.jpg">
+									<img src="images/vanillatoimg.jpg" alt="" />
+                  </a>
+									<h3>Inpainting</h3>
+                  Inpainting Tasks require a good representation of the
+                  textures, which can be obtained from a standard ResNet-50.
+								</div>
+</div>
+</div>
+<div class="row 150%">
+<div class="6u 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/argmaxtoimg.jpg">
+									<img src="images/argmaxtoimg.jpg" alt="" />
+                  </a>
+									<h3>Segmentation-to-Image</h3>
+                  Fusing argmaxed predictions (left) of a segmentation expert with a
+                  decoder produces diverse outputs (right) for
+                  segmentation-to-image tasks.
+								</div>
+</div>
+<div class="6u$ 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/logitstoimg.jpg">
+									<img src="images/logitstoimg.jpg" alt="" />
+                  </a>
+									<h3>Controlling Output Diversity</h3>
+                  Logits of a segmentation expert (visualized on the left with a random
+                                                   projection to RGB) contain more information
+                  about the input, resulting in less diverse outputs for shape-guided image synthesis.
+								</div>
+</div>
+</div>
+<div class="row 150%">
+<div class="6u 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/unalignedimg2img.jpg">
+									<img src="images/unalignedimg2img.jpg" alt="" />
+                  </a>
+									<h3>Unaligned Image-to-Image Translation</h3>
+                  As our approach does not require gradients of the domain
+                  experts, we can also directly use labels obtained from human experts to perform
+                  unaligned image-to-image translation between different domains.
+								</div>
+</div>
+</div>
+
+
+				  </div>
+				</section>
+
+
+			<!-- Four -->
+				<section id="four" class="wrapper style3 special">
+					<div class="container">
+						<header class="major">
+							<h2>Acknowledgement</h2>
+              <p>
+              This page is based on a design by <a href="http://templated.co">TEMPLATED</a>.
+              </p>
+						</header>
+					</div>
+				</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
 	</body>
 </html>

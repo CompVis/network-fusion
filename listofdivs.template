@@ -1,0 +1,97 @@
+								<div class="image fit captioned align-just">
+                  <div class="videocontainer">
+                  <video controls class="videothing">
+                   <source src="images/32-oral.mp4" type="video/mp4">
+                   Your browser does not support the video tag.
+                  </video>
+                  </div>
+                  <h3>Overview</h3>
+                  Our oral presentation for the
+                  <a href="http://visual.cs.brown.edu/aicc2020/">AI for Content Creation
+                  Workshop</a>.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/stylizedvsvanilla.jpg">
+									<img src="images/stylizedvsvanilla.jpg" alt="" />
+                  </a>
+                  <h3>Sketch-to-Image Transfer</h3>
+When trained on a <a href="https://github.com/rgeirhos/Stylized-ImageNet">stylized version of
+ImageNet</a> to remove its texture bias, a ResNet-50 classifier can be fused
+with a <a href="https://github.com/ajbrock/BigGAN-PyTorch">BigGAN generator</a>
+to produce coherent sketch-to-image synthesis results (left), whereas a vanilla
+ResNet-50 fails to produce meaningful representations for sketches (right).
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/imgmod.jpg">
+									<img src="images/imgmod.jpg" alt="" />
+                  </a>
+									<h3>Face Attribute Modification</h3>
+                  Compared to
+                  <a href="https://github.com/yunjey/StarGAN">StarGAN</a>, our approach produces
+                  more coherent changes, e.g. changes in gender cause changes in hair length and
+                  changes in the beard attribute have no effect on female faces. This demon-
+                  strates the advantage of fusing attribute information on a low-dimensional
+                  representation of a generic autoencoder.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/txt2img.jpg">
+									<img src="images/txt2img_small.jpg" alt="" />
+                  </a>
+									<h3>Text-to-Image</h3>
+                  Fusing text representations of BERT with a BigGAN image
+                  generator enables text-to-image generation. Results show a high diversity of
+                  samples, the ability for fine-grained control of the generation process, e.g.
+                  color in the first two rows, and a large diversity in the objects that can be
+                  synthesized, e.g. school buses and broccoli plants.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/stylizedtoimg.jpg">
+									<img src="images/stylizedtoimg.jpg" alt="" />
+                  </a>
+									<h3>Edge-to-Image</h3>
+                  Edge-to-Image Synthesis requires a good representation of
+                  edges, which can be obtained from a Stylized ResNet-50.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/vanillatoimg.jpg">
+									<img src="images/vanillatoimg.jpg" alt="" />
+                  </a>
+									<h3>Inpainting</h3>
+                  Inpainting Tasks require a good representation of the
+                  textures, which can be obtained from a standard ResNet-50.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/argmaxtoimg.jpg">
+									<img src="images/argmaxtoimg.jpg" alt="" />
+                  </a>
+									<h3>Segmentation-to-Image</h3>
+                  Fusing argmaxed predictions (left) of a segmentation expert with a
+                  decoder produces diverse outputs (right) for
+                  segmentation-to-image tasks.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/logitstoimg.jpg">
+									<img src="images/logitstoimg.jpg" alt="" />
+                  </a>
+									<h3>Controlling Output Diversity</h3>
+                  Logits of a segmentation expert (visualized on the left with a random
+                                                   projection to RGB) contain more information
+                  about the input, resulting in less diverse outputs for shape-guided image synthesis.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/unalignedimg2img.jpg">
+									<img src="images/unalignedimg2img.jpg" alt="" />
+                  </a>
+									<h3>Unaligned Image-to-Image Translation</h3>
+                  As our approach does not require gradients of the domain
+                  experts, we can also directly use labels obtained from human experts to perform
+                  unaligned image-to-image translation between different domains.
+								</div>
