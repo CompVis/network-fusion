@@ -37,7 +37,7 @@ ResNet-50 fails to produce meaningful representations for sketches (right).
 								</div>
 ==========
 								<div class="image fit captioned align-just">
-                  <a href="images/txt2img.jpg">
+                  <a href="images/txt2img_large.jpg">
 									<img src="images/txt2img_small.jpg" alt="" />
                   </a>
 									<h3>Text-to-Image</h3>
