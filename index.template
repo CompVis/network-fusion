@@ -103,6 +103,11 @@ methods for image modifications.
                 </p>
 							</div>
 						</div>
+          <p style="text-align:center">Our architecture builds upon our prior
+          work <br/><a
+             href="https://compvis.github.io/iin/">"A Disentangling
+             Invertible Interpretation Network for Explaining Latent
+           Representations"</a></p>
 					</div>
 				</section>
 
