@@ -132,6 +132,76 @@ methods for image modifications.
 <div class="6u$ 12u$(xsmall)">
 
 								<div class="image fit captioned align-just">
+                  <a href="images/overview.png">
+									<img src="images/overview.png" alt="" />
+                  </a>
+                  <h3>Bert-to-BigGAN transfer</h3>
+Our approach enables translation between fixed off-the-shelve expert models
+such as BERT and BigGAN without having to modify or finetune them.
+								</div>
+</div>
+</div>
+<div class="row 150%">
+<div class="6u 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/exemplarguided.jpg">
+									<img src="images/exemplarguided.jpg" alt="" />
+                  </a>
+                  <h3>Exemplar-Guided Image Synthesis</h3>
+By combining the segmentation of an image x, with the invariances obtained from
+an exemplar image y, our approach fuses a segmentation network and an
+autoencoder to enable exemplar-guided image synthesis.
+								</div>
+</div>
+<div class="6u$ 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/costs.jpg">
+									<img src="images/costs.jpg" alt="" />
+                  </a>
+                  <h3>Computational Cost and Energy Consumption</h3>
+We compare computational costs of our conditional INN to those of <a
+href="https://ngc.nvidia.com/catalog/resources/nvidia:bert_for_tensorflow/performance">BERT</a>,
+<a href="https://github.com/ajbrock/BigGAN-PyTorch">BigGAN</a> and <a
+href="https://github.com/NVlabs/FUNIT/">FUNIT</a>. Once strong domain experts
+are available, they can be repurposed by our approach in a time-, energy- and
+cost-effective way. With training costs of our conditional INN being two orders
+of magnitude smaller than the training costs of the domain experts, the latter
+are amortized over all the new tasks that can be solved by fusing experts with
+our approach.
+
+Energy consumption of a Titan X is based on the <a
+href="https://www.nvidia.com/en-us/geforce/products/10series/titan-x-pascal/">recommended
+system power</a> (0.6 kW) by NVIDIA, and energy consumption of eight V100 on
+the <a
+href="https://docs.nvidia.com/dgx/dgx1-user-guide/introduction-to-dgx1.html">power</a>
+(3.5 kW) of a NVIDIA DGX-1 system. Costs are based on the <a
+href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_price_statistics">average
+price</a> of 0.216 EUR per kWh in the EU, and CO2 emissions on the <a
+href="https://www.eea.europa.eu/data-and-maps/daviz/co2-emission-intensity-5">average
+emissions</a> of 0.296 kg CO2 per kWh in the EU.
+								</div>
+</div>
+</div>
+<div class="row 150%">
+<div class="6u 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/landscapes_layers.jpg">
+									<img src="images/landscapes_layers.jpg" alt="" />
+                  </a>
+                  <h3>Insights into learned invariances</h3>
+Translating different layers of an expert model to the representation of an
+autoencoder reveals its learned invariances and thus provides
+diagnostic insights. Here, the expert is a segmentation model, and the visualizations
+demonstrate how its internal representations become increasingly
+invariant against style and appearance.
+								</div>
+</div>
+<div class="6u$ 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
                   <a href="images/stylizedvsvanilla.jpg">
 									<img src="images/stylizedvsvanilla.jpg" alt="" />
                   </a>
@@ -141,6 +211,31 @@ ImageNet</a> to remove its texture bias, a ResNet-50 classifier can be fused
 with a <a href="https://github.com/ajbrock/BigGAN-PyTorch">BigGAN generator</a>
 to produce coherent sketch-to-image synthesis results (left), whereas a vanilla
 ResNet-50 fails to produce meaningful representations for sketches (right).
+								</div>
+</div>
+</div>
+<div class="row 150%">
+<div class="6u 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/unsupervised.jpg">
+									<img src="images/unsupervised.jpg" alt="" />
+                  </a>
+                  <h3>Unsupervised disentangling of shape and appearance</h3>
+Training our approach on synthetically deformed images, our conditional INN
+learns to extract a disentangled shape representation v from y, which can be
+recombined with arbitrary appearances obtained from x.
+								</div>
+</div>
+<div class="6u$ 12u$(xsmall)">
+
+								<div class="image fit captioned align-just">
+                  <a href="images/landscapes.jpg">
+									<img src="images/landscapes.jpg" alt="" />
+                  </a>
+                  <h3>Layout-guided image synthesis</h3>
+The ability to sample the invariances v enables generation of diverse and
+realistic images which are consistent with a given label map.
 								</div>
 </div>
 </div>
